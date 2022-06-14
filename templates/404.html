@@ -1,0 +1,66 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+.fouro{
+  font-family: poppins;
+font-size: 100px;
+  display: flex;
+justify-content: center;
+ animation-duration: 2s;
+ animation-name: rise;
+  animation-iteration-count:infinite;
+}
+@keyframes rise {
+    0%, 60% {
+        transform: translateY(0);
+    }
+
+    60% {
+        transform: translateY(-55px);
+   
+  }
+  70%{
+  transform: translateY(50px);
+  }
+  }
+.error{
+  font-family: poppins;
+font-size: 100px;
+  display: flex;
+justify-content: center;
+ animation-duration: 2s;
+ animation-name: rise,grade;
+  animation-iteration-count:infinite;
+color: red;
+}
+body{
+  background-color: white;
+ animation-name: gradb;
+  animation-duration: 1.9s ;
+ transform: skewY(15deg); 
+}
+@keyframes gradb{
+  10%{Background-color: red;}  
+  20%{Background-color:#ff3b3b;}
+  30%{Background-color:#ff6161;}
+  40%{Background-color:#ff9494;}
+  50%{Background-color: white;}
+}
+@keyframes grade{
+  10%{color: red;}  
+  20%{color:#ff3b3b;}
+  30%{color:#ff6161;}
+  40%{color:#ff9494;}
+  50%{color: white;}
+}
+h1,h2{
+  text-decoration: none;
+}
+div{
+  text-decoration: none;
+}
+.home{
+  color: black;
+}
+</style>
+<div class=fouro><h1>404</h1></div>
+    <div class=error> <h2>Error!</h2></div>

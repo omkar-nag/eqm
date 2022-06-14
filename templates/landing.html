@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth !important;
+        }
+
+        a:hover,
+        a:visited,
+        a:link,
+        a:active {
+            text-decoration: none;
+        }
+        
+        .hero {
+            text-align: center;
+            color: #FFFFFF !important;
+            background-image: url('https://eqm-static.s3.ap-south-1.amazonaws.com/hero.jpg');
+            background-size: cover;
+            width: 100%;
+            height: 940px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .navbar {
+            width: 100%;
+            padding-left: 50px;
+            padding-right: 140px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+            transition: background 0.5s ease;
+        }
+        
+        .nav-item {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            padding: 10px;
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 40px;
+            color: #FFFFFF;
+        }
+        
+        .navbar-brand:hover {
+            color: #FFFFFF;
+        }
+        
+        .nav-link {
+            font-weight: 200;
+            box-shadow: inset 0 0 0 0 #ffffff;
+            color: #FFFFFF;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+        }
+        
+        .nav-link:hover {
+            color: #FFFFFF !important;
+            box-shadow: inset 100px 0 0 0 #7B61FF;
+        }
+        
+        .p1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 64.0852px;
+            line-height: 70px;
+            letter-spacing: 0.0500666px;
+        }
+        
+        .p2 {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 26.0346px;
+            line-height: 18px;
+            letter-spacing: 0.0500666px;
+        }
+        
+        .p3 {
+            font-weight: 600;
+            font-size: 32px;
+            padding-bottom: 50px;
+            color: #161414;
+        }
+        
+        .p4 {
+            margin-top: 32px;
+            font-weight: bolder;
+            font-size: 16px;
+            line-height: 24px;
+            color: #161414;
+        }
+        
+        .p5 {
+            font-weight: 800;
+            font-size: xx-large;
+            color: #7B61FF;
+        }
+        
+        .arrow {
+            margin-top: 100px;
+            box-sizing: border-box;
+            height: 5vw;
+            width: 5vw;
+            border-style: solid;
+            border-color: white;
+            border-width: 0px 2px 2px 0px;
+            transform: rotate(45deg);
+            transition: border-width 0.3s ease-in-out;
+        }
+        
+        .arrow:hover {
+            border-width: 0px 10px 10px 0px;
+            border-color: #7B61FF;
+        }
+        
+        #graph,
+        #realtime {
+            padding: 50px;
+            padding-top: 0;
+        }
+        
+        .graph-div {
+            grid-template-columns: 1fr 1fr;
+            display: grid;
+            row-gap: 50px;
+        }
+        
+        .graph {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        img {
+            max-width: 50%;
+            overflow: visible;
+            box-shadow: 0 10px 10px rgb(0 0 0 / 0.2);
+            transition: .2s;
+            transform: scale(1.15);
+        }
+        
+        img:hover {
+            box-shadow: 0 10px 10px rgb(123 97 255 / 0.6);
+        }
+        
+        .realtime {
+            margin: 0 200px 0 200px;
+            column-gap: 50px;
+            row-gap: 20px;
+        }
+        
+        .card {
+            border: none;
+        }
+        
+        .card:hover {
+            box-shadow: 0 10px 10px rgb(123 97 255 / 0.6);
+        }
+        
+        .p5 {
+            font-weight: 800;
+            font-size: 40px;
+            color: #7B61FF;
+        }
+        
+        .footer {
+            padding: 50px;
+            background: #F9F9F9;
+        }
+        
+        .fa-solid {
+            font-size: 30px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class=".container-fluid flex-column hero">
+        <nav id="navbar" class="navbar navbar-expand-lg  ">
+
+            <a class="navbar-brand" href="#">EQM</a>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class=" navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#2">Realtime</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#1">Metrics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#3">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="display-flex justify-content-center align-items-center">
+            <p class="p1">
+                Environmental Quality
+            </p>
+            <p class="p1">
+                Metric System
+            </p>
+            <br>
+            <p class="p2">An IOT-based method to monitor the Air Quality Index</p>
+        </div>
+        <div class="display-flex justify-content-center align-items-center">
+            <a data-scroll href="#2">
+                <div class="arrow"></div>
+            </a>
+        </div>
+    </div>
+    <div id="2" style="height: 80px">
+
+    </div>
+    <div id="realtime" class=".container-fluid">
+        <p class="p3">
+            Realtime Data
+        </p>
+        <p class="p2 pb-2">
+            Stay informed with real-time metrics <span style="color: #7B61FF">24/7</span>
+        </p>
+        <div class=".container-fluid graph-div realtime">
+            <div class="graph card">
+                <p class="p4">Air Quality Index <i class="fa-solid fa-wind"></i>
+                </p>
+                <p id="aq" class="p5"></p>
+            </div>
+            <div class="graph card">
+                <p class="p4">Temperature <i class="fa-solid fa-temperature-three-quarters"></i></p>
+                <p id="tm" class="p5"></p>
+            </div>
+            <div class="graph card">
+                <p class="p4">Humidity <i class="fa-solid fa-droplet"> </i>
+                </p>
+                <p id="hm" class="p5"></p>
+            </div>
+            <div class="graph card">
+                <p class="p4">Noise Level <i class="fa-solid fa-volume-high"> </i></p>
+                <p id="nl" class="p5"></p>
+            </div>
+        </div>
+    </div>
+    <div id="1" style="height: 80px">
+
+    </div>
+    <div id="graph" class=".container-fluid">
+        <p class="p3">
+            Various Metrics
+        </p>
+        <p class="p2 pb-5">
+            Analyse trends over a period
+        </p>
+        <div class=".container-fluid graph-div">
+            <a class="graph" href="/visualise/aq">
+                <img src="https://eqm-static.s3.ap-south-1.amazonaws.com/AQI.png">
+                <p class="p4">Air Quality Index</p>
+            </a>
+            <a class="graph" href="/visualise/tm">
+                <img src="https://eqm-static.s3.ap-south-1.amazonaws.com/TM.png">
+                <p class="p4">Temperature</p>
+            </a>
+            <a class="graph" href="/visualise/hm">
+                <img src="https://eqm-static.s3.ap-south-1.amazonaws.com/HM.png">
+                <p class="p4">Humidity</p>
+            </a>
+            <a class="graph" href="/visualise/nl">
+                <img src="https://eqm-static.s3.ap-south-1.amazonaws.com/NL.png">
+                <p class="p4">Noise Level</p>
+            </a>
+        </div>
+    </div>
+
+    
+    <div id="3" style="height: 80px">
+
+    </div>
+    <div class="container-fluid footer">
+        <div class="row d-flex align-items-center">
+            <div class="text-center">
+                <div id="contact">
+                    <a class="navbar-brand" style="color:#161414 !important;">Members</a>
+                    <div class="d-flex flex-row align-items-center justify-content-evenly pt-4">
+                        <span> K N Omkar Nag (1CR18EC079)<br>knon18ec@cmrit.ac.in </span> <span> Karan Bhagat (1CR18EC082)<br>kabh18ec@cmrit.ac.in</span> <span> Kumar Aditya Pani (1CR18EC088)<br>kuad18ec@cmrit.ac.in </span> <span>Soumil Biswas (1CR18EC200)<br>sobi18ec@cmrit.ac.in</span>
+                    </div>                   
+                    <br>
+                    <div class="copyright" style="margin-top: 12px;">
+                        © Copyright <strong>EQM</strong> <br>CMR Institute of Technology
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    window.onscroll = function() {
+        if (window.pageYOffset > 100) {
+            console.log('hi')
+            document.getElementById('navbar').style.backgroundColor = '#FFFFFF'
+            var list = document.querySelectorAll(".navbar-brand,.nav-link ");
+            for (var i = 0; i < list.length; i++) {
+                list[i].style.color = '#7B61FF'
+            }
+        } else {
+            console.log('bye')
+            document.getElementById('navbar').style.backgroundColor = 'transparent'
+            var list = document.querySelectorAll(".navbar-brand,.nav-link ");
+            for (var i = 0; i < list.length; i++) {
+                list[i].style.color = '#FFFFFF'
+            }
+        }
+    }
+
+    var links = document.getElementsByTagName("a");
+
+    Array.prototype.forEach.call(links, function(elem, index) {
+        var elemAttr = elem.getAttribute("href ");
+        if (elemAttr && elemAttr.includes("# ")) {
+            elem.addEventListener("click ", function(ev) {
+                ev.preventDefault();
+                document.getElementById(elemAttr.replace(/#/g, " ")).scrollIntoView({
+                    behavior: "smooth ",
+                    block: "start ",
+                    inline: "nearest "
+                });
+            });
+        }
+    });
+
+    function fetchStatus() {
+        fetch('/fetch')
+            .then(response => response.json())
+            .then(data => populate(data));
+            // populate(Array.from({length: 40}, () => Math.floor(Math.random() * 40)));
+    }
+
+    function populate(data) {
+
+        newAQI = parseInt(data[3])*10 + 8;
+        oldNL = parseInt(data[2])
+
+        if (oldNL < 0) {
+            newNL = (oldNL + 500)
+        }
+        else {
+            newNL = (parseInt(data[2]) - 595)*-1;
+        }
+
+        newNL = newNL % 80
+        
+        document.getElementById('tm').innerText = data[0] + ' °C' 
+        document.getElementById('hm').innerText = data[1] + ' %'
+        document.getElementById('nl').innerText = newNL + ' dB'
+        document.getElementById('aq').innerText = newAQI
+    }
+
+    window.addEventListener('load', function() {
+        var fetchInterval = 1000;
+        setInterval(fetchStatus, fetchInterval);
+    });
+    fetchStatus();
+</script>
+
+</html>
